@@ -35,7 +35,7 @@ def main():
     if st.button("Submit"):
         with st.spinner("processing"):
             st.write(df)
-            # Get input from the user
+            st.write("Provid your inputs")
             dwt = st.number_input("Enter Deadweight of the vessel", min_value=5000.0)
             cii = predict_cii(dwt)
             i_year = st.number_input("Enter incoming year of the vessel", min_value=2020.0)
