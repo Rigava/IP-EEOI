@@ -55,5 +55,15 @@ def main():
     st.write(f" The absolute emisson based on the eeoi of {i_eeoi:.1f} is {i_co2emission:.2f} tons co2 with reduction of {reduction:.2f} tons")
     st.write(f" The total reduction for {i_vessel} vessels is {totalred:.2f}")
 
+    # Find the Fleet level reduction
+    st.write(df_fleet) 
+    tco2 = df_fleet['CO2 (in tons)'].values[0]
+    tw = df_fleet['Transport work per Mn'].values[0]
+    newtco2 = df_fleet['CO2 (in tons)'].values[0] - totalred
+    eeoi = tco2/tw
+    eeoi_new = newtco2/tw
+    st.write (f"The fleet co2 emission reduced from {tco2:.1f} to {newtco2:.1f}")
+    st.write (f"The fleet eeoi reduced from {eeoi:.2f} to {eeoi_new:.2f}")
+
 if __name__ == "__main__":
     main()
