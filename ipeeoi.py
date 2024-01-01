@@ -2,9 +2,13 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-df=pd.read_csv('Data For Outgoing vessels.csv')
+upload1 = st.file_uploader("Choose the outgoing vessel data")
+# df=pd.read_csv('Data For Outgoing vessels.csv')
+df=pd.read_csv(upload1)
 df['DistanceWeighted Utilisation']=df['DistanceWeighted Utilisation'].str.replace('%','').astype(float)
-df_fleet = pd.read_csv('Data For Fleet.csv')
+upload2 = st.file_uploader("Choose the fleet data")
+# df_fleet = pd.read_csv('Data For Fleet.csv')
+df_fleet =pd.read_csv(upload2)
 df_fleet['DistanceWeighted Utilisation']=df_fleet['DistanceWeighted Utilisation'].str.replace('%','').astype(float)
 
 def predict_cii(deadweight):
