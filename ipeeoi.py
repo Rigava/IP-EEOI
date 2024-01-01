@@ -29,7 +29,7 @@ def calculate_future_cii(deadweight, start_year, end_year):
     return df
 
 def main():
-    st.title("New Building Impact")
+    st.title("New Building Impact by JOSH@I")
     st.subheader("Without data you are just another person with opinion")
     df, df_fleet=load_data()
     if st.button("Submit"):
