@@ -12,7 +12,7 @@ def load_data():
     return df, df_fleet
 
 def predict_cii(deadweight):
-    return 1987 * deadweight**(-0.489)
+    return 1984 * deadweight**(-0.489)
 
 def calculate_future_cii(deadweight, start_year, end_year):
     years = range(start_year, end_year + 1)
